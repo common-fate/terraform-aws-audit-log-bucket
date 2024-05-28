@@ -8,7 +8,7 @@ output "bucket_arn" {
   value       = aws_s3_bucket.this.arn
 }
 
-output "write_role_arn" {
+output "writer_role_arn" {
   description = "The ARN of the role created with permission to write to the S3 bucket."
   value       = aws_iam_role.write.arn
 }
