@@ -2,15 +2,8 @@ variable "bucket_name" {
   description = "value"
 }
 
-variable "writer_role_name_prefix" {
-  description = "name_prefix for the writer role. Defaults to 'common-fate-audit-log-s3-write-role-'. If setting 'write_role_name', set this to an empty string."
-  default     = "common-fate-audit-log-s3-write-role-"
-}
-
 variable "writer_role_name" {
-  description = "name for the writer role. If specifying this, set 'writer_role_name_prefix' this to an empty string."
-  default     = null
-  nullable    = true
+  description = "Name for the bucket writer role"
 }
 
 variable "writer_policy_name_prefix" {
@@ -31,7 +24,6 @@ variable "common_fate_aws_account" {
 variable "assume_role_external_id" {
   description = "The external ID to be used for the IAM policy trust relation"
   type        = string
-  default     = ""
 }
 
 variable "lifecycle_rules" {
@@ -88,6 +80,6 @@ variable "object_ownership" {
 
 variable "force_destroy" {
   type        = bool
-  description = "Boolean to toggle force destroy of bucket. Defaults to true; should be changed in exceptional circumstances"
-  default     = true
+  description = "Boolean to toggle force destroy of bucket"
+  default     = false
 }

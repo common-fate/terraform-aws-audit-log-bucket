@@ -27,8 +27,7 @@ resource "aws_s3_bucket_ownership_controls" "this" {
 
 
 resource "aws_iam_role" "write" {
-  name        = var.writer_role_name
-  name_prefix = var.writer_role_name_prefix
+  name = var.writer_role_name
 
   tags = {
     "common-fate-allow-assume-role" = "true",
