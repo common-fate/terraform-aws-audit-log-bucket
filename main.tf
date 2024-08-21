@@ -8,6 +8,13 @@ resource "aws_s3_bucket" "this" {
   }
 }
 
+resource "aws_s3_bucket_versioning" "this" {
+  bucket = aws_s3_bucket.this.id
+  versioning_configuration {
+    status = var.versioning_status
+  }
+}
+
 resource "aws_s3_bucket_logging" "this" {
   count  = contains(keys(var.bucket_logging_target), "bucket") ? 1 : 0
   bucket = aws_s3_bucket.this.id
