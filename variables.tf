@@ -66,10 +66,10 @@ variable "bucket_logging_target" {
   # }
 }
 
-variable "versioning" {
-  type        = bool
-  description = "Toggle for versioning the bucket. Defaults to true"
-  default     = true
+variable "versioning_status" {
+  type        = string
+  description = "Toggle for versioning the bucket. Defaults to Enabled"
+  default     = "Enabled"
 }
 
 variable "object_ownership" {
